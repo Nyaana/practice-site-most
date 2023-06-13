@@ -1,13 +1,79 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: white;
+  color: black;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  height: 100px;
+  background-color: rgb(228, 255, 227);
+}
+
+header .logo {
+  margin-left: 190px;
+  font-weight: 800px;
+  font-size: 40px;
+}
+
+.classShop {
+  margin: 100px 150px;
+  /* background-color: rgb(228, 255, 227); */
+}
+
+.classContainerProducts {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.classProducts {
+  width: 25%;
+  margin: 40px;
+  background: rgb(235, 234, 234);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.classImgProducts {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px 10px 0 0;
+  transition: transform 500ms ease;
+}
+
+.classImgProducts:hover {
+  transform: scale(1.05);
+}
+
+.classTitleProducts {
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.classPriceProducts {
+  align-items: center;
+  text-align: center;
+  margin: 0 0 15px 0;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  height: 100px;
+  background-color: rgb(228, 255, 227);
+}
+
+.footer-container {
+  margin: 50px;
 }
