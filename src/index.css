@@ -3,17 +3,25 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background: white;
-  color: black;
+  color: rgb(20, 20, 20);
 }
+
+/* Header */
 
 header {
   display: flex;
+  position: relative;
   align-items: center;
   margin: 5px;
   height: 100px;
-  background-color: rgb(228, 255, 227);
+  background-color: rgb(215, 255, 213);
 }
 
 header .logo {
@@ -22,7 +30,41 @@ header .logo {
   font-size: 40px;
 }
 
-.classShop {
+.navigacion {
+  position: absolute;
+  right: 0;
+  margin-right: 190px;
+}
+
+.linkHome,
+.linkState {
+  padding: 25px;
+  font-size: 20px;
+  color: rgb(20, 20, 20);
+  text-decoration: none;
+}
+
+.linkInHome,
+.linkInState {
+  padding: 25px;
+  font-size: 20px;
+  color: rgb(20, 20, 20);
+  text-decoration: solid underline rgb(20, 20, 20) 1px;
+  text-underline-offset: 5px;
+}
+
+.linkHome:hover,
+.linkState:hover,
+.linkInHome:hover,
+.linkInState:hover {
+  color: rgb(156, 156, 156);
+  text-decoration: solid underline rgb(156, 156, 156) 1px;
+  text-underline-offset: 5px;
+}
+
+/* страница Home */
+
+.classHome {
   margin: 100px 150px;
   /* background-color: rgb(228, 255, 227); */
 }
@@ -66,12 +108,51 @@ header .logo {
   margin: 0 0 15px 0;
 }
 
+/* страница State */
+
+.classState {
+  margin: 100px 150px 200px 150px;
+}
+
+.classContainerState {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.classPlusMinus {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  font-size: 80px;
+  padding: 60px 40px 40px 40px;
+  background-color: rgb(235, 234, 234);
+  border-radius: 10px;
+}
+
+.classPlus,
+.classMinus {
+  font-size: 30px;
+  border-radius: 30px;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border: none;
+  margin: 120px 0 0 0;
+}
+
+/* Footer */
+
 footer {
   display: flex;
   align-items: center;
-  margin: 5px;
   height: 100px;
-  background-color: rgb(228, 255, 227);
+  margin: 5px;
+  background-color: rgb(215, 255, 213);
 }
 
 .footer-container {

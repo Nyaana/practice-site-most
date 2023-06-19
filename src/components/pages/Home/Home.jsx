@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -21,9 +22,17 @@ function Home() {
         <div>
           <span className="logo">Nyaana</span>
         </div>
+        <nav className="navigacion">
+          <Link to="/" className="linkInHome">
+            Home
+          </Link>
+          <Link to="/State" className="linkState">
+            State
+          </Link>
+        </nav>
       </header>
 
-      <div className="classShop">
+      <div className="classHome">
         <div className="classContainerProducts">
           {products.map((item) => {
             return (
