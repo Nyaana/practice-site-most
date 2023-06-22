@@ -2,10 +2,14 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../store/productsSlice";
 import { Link } from "react-router-dom";
+import { addToBasket } from "../../store/basketSlice";
 
 function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
+  const handleAddToBasket = (product) => {
+    dispatch(addToBasket(product));
+  };
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -24,6 +28,9 @@ function Home() {
           <Link to="/State" className="linkState">
             State
           </Link>
+          <Link to="/Basket" className="linkBasket">
+            Basket
+          </Link>
         </nav>
       </header>
 
@@ -39,6 +46,12 @@ function Home() {
                 />
                 <p className="classTitleProducts">{item.title}</p>
                 <p className="classPriceProducts">{item.price} руб.</p>
+                <button
+                  className="addToBasket"
+                  onClick={() => handleAddToBasket(item)}
+                >
+                  В корзину
+                </button>
               </div>
             );
           })}

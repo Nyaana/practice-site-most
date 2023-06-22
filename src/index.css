@@ -3,14 +3,15 @@
   padding: 0;
 }
 
-html,
-body {
+html {
   height: 100%;
 }
 
 body {
   background: white;
   color: rgb(20, 20, 20);
+  position: relative;
+  min-height: 100%;
 }
 
 /* Header */
@@ -37,7 +38,8 @@ header .logo {
 }
 
 .linkHome,
-.linkState {
+.linkState,
+.linkBasket {
   padding: 25px;
   font-size: 20px;
   color: rgb(20, 20, 20);
@@ -45,7 +47,8 @@ header .logo {
 }
 
 .linkInHome,
-.linkInState {
+.linkInState,
+.linkInBasket {
   padding: 25px;
   font-size: 20px;
   color: rgb(20, 20, 20);
@@ -55,11 +58,27 @@ header .logo {
 
 .linkHome:hover,
 .linkState:hover,
+.linkBasket:hover,
 .linkInHome:hover,
-.linkInState:hover {
+.linkInState:hover,
+.linkInBasket:hover {
   color: rgb(156, 156, 156);
   text-decoration: solid underline rgb(156, 156, 156) 1px;
   text-underline-offset: 5px;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  margin: 5px;
+  background-color: rgb(215, 255, 213);
+}
+
+.footer-container {
+  margin: 50px;
 }
 
 /* страница Home */
@@ -108,10 +127,25 @@ header .logo {
   margin: 0 0 15px 0;
 }
 
+.addToBasket {
+  margin: 5px 0 20px 95px;
+  background: rgb(20, 20, 20);
+  color: white;
+  width: 90px;
+  height: 35px;
+  /* font-size: 20px; */
+  /* text-align: center;
+  line-height: 35px; */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
 /* страница State */
 
 .classState {
-  margin: 100px 150px 200px 150px;
+  min-height: calc(100vh - 100px - 105px);
+  margin: 100px 0 0 0;
 }
 
 .classContainerState {
@@ -145,16 +179,94 @@ header .logo {
   margin: 120px 0 0 0;
 }
 
-/* Footer */
+/* старница Basket */
 
-footer {
-  display: flex;
-  align-items: center;
-  height: 100px;
-  margin: 5px;
-  background-color: rgb(215, 255, 213);
+.classBasket {
+  min-height: calc(100vh - 100px - 105px);
+  margin: 100px 150px;
+  position: relative;
 }
 
-.footer-container {
-  margin: 50px;
+.TitleBasket {
+  font-size: 35px;
+  margin: 0 0 20px 40px;
+}
+
+.clearBasket {
+  font-size: 17px;
+  margin: 10px 0 0 40px;
+}
+
+.classClearBasket {
+  margin: 10px;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  position: absolute;
+  right: 40px;
+  top: 0px;
+  width: 140px;
+  height: 35px;
+  text-align: center;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.classImgProductsBasket {
+  height: 270px;
+  width: 270px;
+  border-radius: 15px 0 0 15px;
+
+  transition: transform 500ms ease;
+}
+
+.classImgProductsBasket:hover {
+  transform: scale(1.05);
+}
+
+.classProductsBasket {
+  width: 800px;
+  height: 270px;
+  margin: 40px 0 80px 40px;
+  background-color: rgb(235, 234, 234);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.classInfoProductsBasket {
+  width: 500px;
+  height: 270px;
+  position: relative;
+  left: 260px;
+  bottom: 289px;
+}
+
+.classTitleProductsBasket {
+  font-size: 25px;
+  padding: 10px 0 0 0;
+  margin: 15px 0 0 40px;
+}
+
+.classPriceProductsBasket {
+  font-size: 18px;
+  margin: 15px 0 15px 45px;
+}
+
+.classDeletBasket {
+  margin: 20px 0 0 40px;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  width: 80px;
+  height: 35px;
+  text-align: center;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.classSumPriceBasket {
+  margin: 10px;
+  position: absolute;
+  right: 45px;
+  top: 60px;
 }
