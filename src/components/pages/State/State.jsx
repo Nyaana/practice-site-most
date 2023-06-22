@@ -14,7 +14,7 @@ function State() {
 
   return (
     <body>
-      <header className="headerState">
+      <header>
         <div>
           <span className="logo">Nyaana</span>
         </div>
@@ -24,6 +24,9 @@ function State() {
           </Link>
           <Link to="/State" className="linkInState">
             State
+          </Link>
+          <Link to="/Basket" className="linkBasket">
+            Basket
           </Link>
         </nav>
       </header>
@@ -42,7 +45,7 @@ function State() {
         </div>
       </div>
 
-      <footer className="footerState">
+      <footer>
         <div className="footer-container">
           <p>Copyriting</p>
         </div>
