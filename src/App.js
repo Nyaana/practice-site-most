@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./components/pages/Home/Home";
 import State from "./components/pages/State/State";
 import Basket from "./components/pages/Basket/Basket";
+import ProductDetails from "./components/pages/Home/ProductDetails";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/State" element={<State />} />
           <Route path="/Basket" element={<Basket />} />
+          <Route path="/products/:productId" element={<ProductDetails />} />
         </Routes>
       </div>
     </Router>

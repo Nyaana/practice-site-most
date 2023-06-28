@@ -118,7 +118,7 @@ footer {
   font-size: 20px;
   align-items: center;
   text-align: center;
-  margin: 5px 0;
+  margin: 7px 0 5px 0;
 }
 
 .classPriceProducts {
@@ -127,15 +127,16 @@ footer {
   margin: 0 0 15px 0;
 }
 
+.addToBasketDiv {
+  text-align: center;
+  margin: 5px 0 25px 0;
+}
+
 .addToBasket {
-  margin: 5px 0 20px 95px;
   background: rgb(20, 20, 20);
   color: white;
   width: 90px;
   height: 35px;
-  /* font-size: 20px; */
-  /* text-align: center;
-  line-height: 35px; */
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -216,7 +217,6 @@ footer {
   height: 270px;
   width: 270px;
   border-radius: 15px 0 0 15px;
-
   transition: transform 500ms ease;
 }
 
@@ -269,4 +269,74 @@ footer {
   position: absolute;
   right: 45px;
   top: 60px;
+}
+
+/* старница ProductDetails */
+
+.classProductDetails {
+  min-height: calc(100vh - 100px - 105px);
+  margin: 100px 150px;
+  position: relative;
+}
+
+.classContainerProductDetails {
+  padding: 20px 40px;
+}
+
+.classImgProductDetails {
+  width: 500px;
+  min-height: 350px;
+}
+
+.classContainerInfoProductDetails {
+  position: absolute;
+  width: 530px;
+  height: 350px;
+  right: 5%;
+  top: 20px;
+}
+
+.classTitleProductDetails {
+  font-size: 35px;
+  margin: 0 0 0 15px;
+}
+
+.classInfoProductDetails {
+  font-size: 20px;
+  margin: 5px 0 0 15px;
+}
+
+.classDopInfoProductDetails {
+  font-size: 18px;
+  margin: 5px 0 0 15px;
+}
+
+.classPriceProductDetails {
+  font-size: 27px;
+  margin: 5px 0 0 15px;
+}
+
+.addToBasketDivProductDetails {
+  margin: 15px 0 0 15px;
+}
+
+.addToBasketProductDetails {
+  font-size: 16px;
+  background: rgb(20, 20, 20);
+  color: white;
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.classDivImgProductDetails2 {
+  margin: 5px 0 0 0;
+}
+
+.classImgProductDetails2 {
+  max-width: 250px;
+  max-height: 300px;
+  margin: 5px;
 }

@@ -39,19 +39,23 @@ function Home() {
           {products.map((item) => {
             return (
               <div className="classProducts" key={item.id}>
-                <img
-                  className="classImgProducts"
-                  src={item.thumbnail}
-                  alt={item.title}
-                />
+                <Link to={`/products/${item.id}`}>
+                  <img
+                    className="classImgProducts"
+                    src={item.thumbnail}
+                    alt={item.title}
+                  />
+                </Link>
                 <p className="classTitleProducts">{item.title}</p>
                 <p className="classPriceProducts">{item.price} руб.</p>
-                <button
-                  className="addToBasket"
-                  onClick={() => handleAddToBasket(item)}
-                >
-                  В корзину
-                </button>
+                <div className="addToBasketDiv">
+                  <button
+                    className="addToBasket"
+                    onClick={() => handleAddToBasket(item)}
+                  >
+                    В корзину
+                  </button>
+                </div>
               </div>
             );
           })}
