@@ -1,14 +1,29 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { fetchProducts } from "../../store/productsSlice";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { addToBasket } from "../../store/basketSlice";
+import { logout } from "../../store/authSlice";
 
 function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   const handleAddToBasket = (product) => {
+    if (!isLoggedIn) {
+      toast.error("Зарегестрируйтесь для добавления товара в корзину");
+      return;
+    }
     dispatch(addToBasket(product));
+  };
+
+  const auth = useSelector((state) => state.auth);
+  const isAuthenticated = auth.isAuthenticated;
+  const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
+
+  const handleLogout = () => {
+    dispatch(logout());
   };
 
   useEffect(() => {
@@ -28,9 +43,25 @@ function Home() {
           <Link to="/State" className="linkState">
             State
           </Link>
-          <Link to="/Basket" className="linkBasket">
-            Basket
-          </Link>
+          {isAuthenticated ? (
+            <NavLink to="/Basket" className="linkBasket">
+              Basket
+            </NavLink>
+          ) : null}
+          {isAuthenticated ? (
+            <>
+              <NavLink onClick={handleLogout} className="linkLogout">
+                Logout
+              </NavLink>
+              <NavLink to="/profile">
+                <button className="buttonProfile">Profile</button>
+              </NavLink>
+            </>
+          ) : (
+            <NavLink to="/login" className="linkSignIn">
+              Sign In
+            </NavLink>
+          )}
         </nav>
       </header>
 

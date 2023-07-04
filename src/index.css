@@ -39,7 +39,9 @@ header .logo {
 
 .linkHome,
 .linkState,
-.linkBasket {
+.linkBasket,
+.linkSignIn,
+.linkLogout {
   padding: 25px;
   font-size: 20px;
   color: rgb(20, 20, 20);
@@ -59,12 +61,24 @@ header .logo {
 .linkHome:hover,
 .linkState:hover,
 .linkBasket:hover,
+.linkSignIn:hover,
+.linkLogout:hover,
 .linkInHome:hover,
 .linkInState:hover,
 .linkInBasket:hover {
   color: rgb(156, 156, 156);
   text-decoration: solid underline rgb(156, 156, 156) 1px;
   text-underline-offset: 5px;
+}
+
+.buttonProfile {
+  font-size: 16px;
+  background: rgb(20, 20, 20);
+  color: white;
+  width: 80px;
+  height: 35px;
+  border: none;
+  border-radius: 30px;
 }
 
 /* Footer */
@@ -339,4 +353,131 @@ footer {
   max-width: 250px;
   max-height: 300px;
   margin: 5px;
+}
+
+/* старница Login */
+
+.classLogin {
+  margin: 100px 150px;
+}
+
+.classTitleSignIn {
+  font-size: 35px;
+  margin: 0 0 20px 40px;
+}
+
+.classMessage {
+  margin: 0 0 20px 40px;
+}
+
+.form {
+  width: 300px;
+  height: 240px;
+  margin: 10px 0 0 40px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: rgb(215, 255, 213);
+  letter-spacing: 1px;
+}
+
+.classFormInput,
+.classFormButton {
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+.classFormGroup {
+  margin: 10px;
+  padding: 10px 0 0 0;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.classFormLabel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  color: rgb(20, 20, 20);
+  transition: 0.3s;
+}
+
+.classFormInput {
+  width: 100%;
+  padding: 0 0 17px 0;
+  border: none;
+  border-bottom: 1px solid rgb(20, 20, 20);
+  background-color: transparent;
+  outline: none;
+  transition: 0.3s;
+}
+
+.classFormButton {
+  margin: 10px 2px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  color: rgb(20, 20, 20);
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.classFormButton:focus,
+.classFormButton:hover {
+  background-color: rgb(156, 156, 156);
+}
+
+.classFormInput:focus,
+.classFormInput:not(:placeholder-shown) {
+  padding: 15px 0 10px 0;
+}
+
+/* старница Profile */
+
+.classProfile {
+  margin: 100px 150px;
+  width: 800px;
+  border-radius: 15px;
+  background-color: rgb(215, 255, 213);
+}
+
+.classTitleProfile {
+  font-size: 35px;
+  margin: 0 0 20px 40px;
+  padding: 20px 0 0 0;
+}
+
+.classAvatarProfile {
+  margin: 20px 0 40px 40px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.classContainerInfoProfile {
+  position: absolute;
+  width: 530px;
+  height: 350px;
+  left: 450px;
+  top: 60px;
+  margin: 20px 0 20px 0;
+}
+
+.classInfoProfile {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.classButtonExitProfile {
+  margin: 10px 0 0 0;
+  font-size: 16px;
+  background: rgb(20, 20, 20);
+  color: white;
+  width: 100px;
+  height: 35px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
 }
