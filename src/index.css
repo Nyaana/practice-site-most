@@ -41,7 +41,8 @@ header .logo {
 .linkState,
 .linkBasket,
 .linkSignIn,
-.linkLogout {
+.linkLogout,
+.linkPosts {
   padding: 25px;
   font-size: 20px;
   color: rgb(20, 20, 20);
@@ -50,7 +51,8 @@ header .logo {
 
 .linkInHome,
 .linkInState,
-.linkInBasket {
+.linkInBasket,
+.linkInPosts {
   padding: 25px;
   font-size: 20px;
   color: rgb(20, 20, 20);
@@ -63,9 +65,11 @@ header .logo {
 .linkBasket:hover,
 .linkSignIn:hover,
 .linkLogout:hover,
+.linkPosts:hover,
 .linkInHome:hover,
 .linkInState:hover,
-.linkInBasket:hover {
+.linkInBasket:hover,
+.linkInPosts:hover {
   color: rgb(156, 156, 156);
   text-decoration: solid underline rgb(156, 156, 156) 1px;
   text-underline-offset: 5px;
@@ -445,7 +449,7 @@ footer {
 
 .classTitleProfile {
   font-size: 35px;
-  margin: 0 0 20px 40px;
+  margin: 0 0 0 40px;
   padding: 20px 0 0 0;
 }
 
@@ -470,14 +474,105 @@ footer {
   font-size: 18px;
 }
 
-.classButtonExitProfile {
-  margin: 10px 0 0 0;
+/* страница Post */
+
+.classDivNewPosts {
+  min-height: calc(100vh - 100px - 105px);
+  margin: 100px 150px;
+  background-color: rgb(215, 255, 213);
+  border-radius: 15px;
+}
+
+.classTitleNewPosts {
+  font-size: 35px;
+  margin: 0 0 0 40px;
+  padding: 40px 0 0 0;
+}
+
+.classContainerNewPosts {
+  margin: 40px;
+  /* background-color: aqua; */
+}
+
+.classNewPostsTitle {
+  margin: 0 0 10px 0;
+  width: 450px;
+  padding: 5px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid rgb(20, 20, 20);
+  background-color: white;
+  outline: none;
+  transition: 0.3s;
+}
+
+.classNewPostsInfo {
+  margin: 10px 0;
+  padding: 5px;
+  width: 455px;
+  height: 200px;
+  padding: 0 0 5px 0;
+  font-size: 18px;
+}
+
+.classBattonPostst {
+  margin: 10px 0 50px 0;
   font-size: 16px;
   background: rgb(20, 20, 20);
   color: white;
-  width: 100px;
-  height: 35px;
+  width: 120px;
+  height: 40px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
+}
+
+.classPosts {
+  min-height: calc(100vh - 100px - 105px);
+  margin: 100px 150px;
+  position: relative;
+  background-color: rgb(215, 255, 213);
+  border-radius: 15px;
+}
+
+.classContainerPost {
+  position: relative;
+  left: 150px;
+  bottom: 120px;
+  margin: 10px 0 0 0;
+}
+
+.classTitlePosts {
+  font-size: 35px;
+  margin: 0 0 40px 40px;
+  padding: 40px 0;
+}
+
+.classMassagePosts {
+  margin: 0 0 0 40px;
+  padding: 10px 0 20px 0;
+}
+
+.classAvatarPost {
+  margin: 20px 0 0 40px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.classTitlePost {
+  font-size: 28px;
+  margin: 10px 0 0 40px;
+}
+
+.classInfoPost {
+  font-size: 20px;
+  width: 78%;
+  margin: 10px 0 0 40px;
+}
+
+.classAuthorPost {
+  font-size: 18px;
+  margin: 10px 0 0 40px;
 }

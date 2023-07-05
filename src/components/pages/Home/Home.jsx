@@ -44,21 +44,22 @@ function Home() {
             State
           </Link>
           {isAuthenticated ? (
-            <NavLink to="/Basket" className="linkBasket">
-              Basket
-            </NavLink>
-          ) : null}
-          {isAuthenticated ? (
             <>
+              <NavLink to="/Posts" className="linkPosts">
+                Posts
+              </NavLink>
+              <NavLink to="/Basket" className="linkBasket">
+                Basket
+              </NavLink>
               <NavLink onClick={handleLogout} className="linkLogout">
                 Logout
               </NavLink>
-              <NavLink to="/profile">
+              <NavLink to="/Profile">
                 <button className="buttonProfile">Profile</button>
               </NavLink>
             </>
           ) : (
-            <NavLink to="/login" className="linkSignIn">
+            <NavLink to="/Login" className="linkSignIn">
               Sign In
             </NavLink>
           )}

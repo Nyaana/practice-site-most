@@ -10,6 +10,7 @@ import Basket from "./components/pages/Basket/Basket";
 import ProductDetails from "./components/pages/Home/ProductDetails";
 import Login from "./components/pages/Home/Login";
 import Profile from "./components/pages/Home/Profile";
+import Posts from "./components/pages/Home/Posts";
 
 function App() {
   return (
@@ -19,9 +20,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/State" element={<State />} />
           <Route path="/Basket" element={<Basket />} />
-          <Route path="/products/:productId" element={<ProductDetails />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/Products/:productId" element={<ProductDetails />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Posts" element={<Posts />} />
         </Routes>
         <ToastContainer />
       </div>
