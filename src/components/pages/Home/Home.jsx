@@ -12,7 +12,7 @@ function Home() {
   const products = useSelector((state) => state.products);
   const handleAddToBasket = (product) => {
     if (!isLoggedIn) {
-      toast.error("Зарегестрируйтесь для добавления товара в корзину");
+      toast.error("Sign in to add item to basket");
       return;
     }
     dispatch(addToBasket(product));
@@ -36,17 +36,25 @@ function Home() {
         <div>
           <span className="logo">Nyaana</span>
         </div>
+        <div className="burger">
+          <NavLink to="/Menu">
+            <button className="buttonMenu">Menu</button>
+          </NavLink>
+        </div>
         <nav className="navigacion">
           <Link to="/" className="linkInHome">
             Home
           </Link>
-          <Link to="/State" className="linkState">
-            State
-          </Link>
           {isAuthenticated ? (
             <>
+              <NavLink to="/State" className="linkState">
+                State
+              </NavLink>
+              <NavLink to="/Users" className="linkUsers">
+                Users
+              </NavLink>
               <NavLink to="/Posts" className="linkPosts">
-                Posts
+                Add posts
               </NavLink>
               <NavLink to="/Basket" className="linkBasket">
                 Basket
@@ -79,13 +87,13 @@ function Home() {
                   />
                 </Link>
                 <p className="classTitleProducts">{item.title}</p>
-                <p className="classPriceProducts">{item.price} руб.</p>
+                <p className="classPriceProducts">{item.price} $</p>
                 <div className="addToBasketDiv">
                   <button
                     className="addToBasket"
                     onClick={() => handleAddToBasket(item)}
                   >
-                    В корзину
+                    Add basket
                   </button>
                 </div>
               </div>

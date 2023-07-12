@@ -22,7 +22,8 @@ header {
   align-items: center;
   margin: 5px;
   height: 100px;
-  background-color: rgb(215, 255, 213);
+  background-color: #78a17c;
+  color: white;
 }
 
 header .logo {
@@ -42,21 +43,24 @@ header .logo {
 .linkBasket,
 .linkSignIn,
 .linkLogout,
-.linkPosts {
+.linkPosts,
+.linkUsers {
   padding: 25px;
   font-size: 20px;
-  color: rgb(20, 20, 20);
+  color: white;
   text-decoration: none;
 }
 
 .linkInHome,
 .linkInState,
 .linkInBasket,
-.linkInPosts {
+.linkInSignIn,
+.linkInPosts,
+.linkInUsers {
   padding: 25px;
   font-size: 20px;
-  color: rgb(20, 20, 20);
-  text-decoration: solid underline rgb(20, 20, 20) 1px;
+  color: white;
+  text-decoration: solid underline white 1px;
   text-underline-offset: 5px;
 }
 
@@ -66,23 +70,274 @@ header .logo {
 .linkSignIn:hover,
 .linkLogout:hover,
 .linkPosts:hover,
+.linkUsers:hover,
 .linkInHome:hover,
 .linkInState:hover,
 .linkInBasket:hover,
-.linkInPosts:hover {
-  color: rgb(156, 156, 156);
-  text-decoration: solid underline rgb(156, 156, 156) 1px;
+.linkInSignIn:hover,
+.linkInPosts:hover,
+.linkInUsers:hover {
+  color: rgb(20, 20, 20);
+  text-decoration: solid underline rgb(20, 20, 20) 1px;
   text-underline-offset: 5px;
 }
 
 .buttonProfile {
   font-size: 16px;
-  background: rgb(20, 20, 20);
+  background: #f2a760;
   color: white;
   width: 80px;
   height: 35px;
   border: none;
   border-radius: 30px;
+}
+
+.buttonProfile:hover,
+.buttonProfile:focus,
+.buttonInProfile:hover,
+.buttonInProfile:focus {
+  background: #f06f54;
+  color: rgb(20, 20, 20);
+}
+
+.buttonInProfile {
+  background: #f06f54;
+  font-size: 16px;
+  color: white;
+  width: 80px;
+  height: 35px;
+  border: none;
+  border-radius: 30px;
+}
+
+.burger {
+  display: none;
+}
+
+.classMenu {
+  background-color: #78a17c;
+}
+
+@media (max-width: 820px) {
+  header .logo {
+    margin-left: 20px;
+    font-weight: 800px;
+    font-size: 40px;
+  }
+
+  .navigacion {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .buttonMenu {
+    margin: 0 0 0 540px;
+    font-size: 16px;
+    background: #f2a760;
+    color: white;
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+  }
+
+  .classMenu {
+    background-color: #78a17c;
+    padding: 20px;
+  }
+
+  .classMenu p {
+    padding: 10px;
+  }
+
+  .linkHome,
+  .linkState,
+  .linkBasket,
+  .linkSignIn,
+  .linkLogout,
+  .linkPosts,
+  .linkUsers {
+    margin: 25px 0 0 0;
+    padding: 50px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .linkInHome,
+  .linkInState,
+  .linkInBasket,
+  .linkInSignIn,
+  .linkInPosts,
+  .linkInUsers {
+    margin: 25px 0 0 0;
+    padding: 50px;
+    font-size: 20px;
+    color: white;
+    text-decoration: solid underline white 1px;
+    text-underline-offset: 5px;
+  }
+
+  .linkHome:hover,
+  .linkState:hover,
+  .linkBasket:hover,
+  .linkSignIn:hover,
+  .linkLogout:hover,
+  .linkPosts:hover,
+  .linkUsers:hover,
+  .linkInHome:hover,
+  .linkInState:hover,
+  .linkInBasket:hover,
+  .linkInSignIn:hover,
+  .linkInPosts:hover,
+  .linkInUsers:hover {
+    color: rgb(20, 20, 20);
+    text-decoration: solid underline rgb(20, 20, 20) 1px;
+    text-underline-offset: 5px;
+  }
+
+  .buttonProfile {
+    margin: 25px 0 0 40px;
+    font-size: 16px;
+    background: #f2a760;
+    color: white;
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+  }
+
+  .buttonProfile:hover,
+  .buttonProfile:focus,
+  .buttonInProfile:hover,
+  .buttonInProfile:focus {
+    background: #f06f54;
+    color: rgb(20, 20, 20);
+  }
+
+  .buttonInProfile {
+    background: #f06f54;
+    font-size: 16px;
+    color: white;
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+  }
+}
+
+@media (max-width: 390px) {
+  header .logo {
+    margin-left: 20px;
+    font-weight: 800px;
+    font-size: 40px;
+  }
+
+  .navigacion {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .buttonMenu {
+    margin: 0 0 0 140px;
+    font-size: 16px;
+    background: #f2a760;
+    color: white;
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+  }
+
+  .classMenu {
+    background-color: #78a17c;
+    padding: 20px;
+  }
+
+  .classMenu p {
+    padding: 10px;
+  }
+
+  .linkHome,
+  .linkState,
+  .linkBasket,
+  .linkSignIn,
+  .linkLogout,
+  .linkPosts,
+  .linkUsers {
+    margin: 25px 0 0 0;
+    padding: 50px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .linkInHome,
+  .linkInState,
+  .linkInBasket,
+  .linkInSignIn,
+  .linkInPosts,
+  .linkInUsers {
+    margin: 25px 0 0 0;
+    padding: 50px;
+    font-size: 20px;
+    color: white;
+    text-decoration: solid underline white 1px;
+    text-underline-offset: 5px;
+  }
+
+  .linkHome:hover,
+  .linkState:hover,
+  .linkBasket:hover,
+  .linkSignIn:hover,
+  .linkLogout:hover,
+  .linkPosts:hover,
+  .linkUsers:hover,
+  .linkInHome:hover,
+  .linkInState:hover,
+  .linkInBasket:hover,
+  .linkInSignIn:hover,
+  .linkInPosts:hover,
+  .linkInUsers:hover {
+    color: rgb(20, 20, 20);
+    text-decoration: solid underline rgb(20, 20, 20) 1px;
+    text-underline-offset: 5px;
+  }
+
+  .buttonProfile {
+    margin: 25px 0 0 40px;
+    font-size: 16px;
+    background: #f2a760;
+    color: white;
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+  }
+
+  .buttonProfile:hover,
+  .buttonProfile:focus,
+  .buttonInProfile:hover,
+  .buttonInProfile:focus {
+    background: #f06f54;
+    color: rgb(20, 20, 20);
+  }
+
+  .buttonInProfile {
+    background: #f06f54;
+    font-size: 16px;
+    color: white;
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 30px;
+  }
 }
 
 /* Footer */
@@ -92,18 +347,32 @@ footer {
   align-items: center;
   height: 100px;
   margin: 5px;
-  background-color: rgb(215, 255, 213);
+  background-color: #78a17c;
+  color: white;
 }
 
 .footer-container {
   margin: 50px;
 }
 
+@media (max-width: 820px) {
+  .footer-container {
+    margin: 50px;
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 390px) {
+  .footer-container {
+    margin: 50px;
+    margin-left: 20px;
+  }
+}
+
 /* страница Home */
 
 .classHome {
   margin: 100px 150px;
-  /* background-color: rgb(228, 255, 227); */
 }
 
 .classContainerProducts {
@@ -116,7 +385,7 @@ footer {
 .classProducts {
   width: 25%;
   margin: 40px;
-  background: rgb(235, 234, 234);
+  background: #f2eeec;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -136,10 +405,11 @@ footer {
   font-size: 20px;
   align-items: center;
   text-align: center;
-  margin: 7px 0 5px 0;
+  margin: 15px 0 5px 0;
 }
 
 .classPriceProducts {
+  font-size: 18px;
   align-items: center;
   text-align: center;
   margin: 0 0 15px 0;
@@ -151,13 +421,60 @@ footer {
 }
 
 .addToBasket {
-  background: rgb(20, 20, 20);
+  background: #f2a760;
   color: white;
-  width: 90px;
-  height: 35px;
+  width: 100px;
+  height: 40px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
+}
+
+.addToBasket:hover,
+.addToBasket:focus {
+  background: #f06f54;
+}
+
+@media (max-width: 820px) {
+  .classHome {
+    margin: 100px 40px;
+  }
+
+  .classContainerProducts {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .classProducts {
+    width: 38%;
+    margin: 40px;
+    background: #f2eeec;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 390px) {
+  .classHome {
+    margin: 50px 20px;
+  }
+
+  .classContainerProducts {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .classProducts {
+    width: 100%;
+    text-align: center;
+    background: #f2eeec;
+    border-radius: 10px;
+    overflow: hidden;
+  }
 }
 
 /* страница State */
@@ -183,7 +500,7 @@ footer {
   height: 200px;
   font-size: 80px;
   padding: 60px 40px 40px 40px;
-  background-color: rgb(235, 234, 234);
+  background-color: #f2eeec;
   border-radius: 10px;
 }
 
@@ -196,6 +513,13 @@ footer {
   background-color: white;
   border: none;
   margin: 120px 0 0 0;
+}
+
+@media (max-width: 390px) {
+  .classState {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 50px 0;
+  }
 }
 
 /* старница Basket */
@@ -218,7 +542,7 @@ footer {
 
 .classClearBasket {
   margin: 10px;
-  background-color: rgb(20, 20, 20);
+  background-color: #f2a760;
   color: white;
   position: absolute;
   right: 40px;
@@ -229,6 +553,11 @@ footer {
   border: none;
   border-radius: 30px;
   cursor: pointer;
+}
+
+.classClearBasket:hover,
+.classClearBasket:focus {
+  background-color: #f06f54;
 }
 
 .classImgProductsBasket {
@@ -246,7 +575,7 @@ footer {
   width: 800px;
   height: 270px;
   margin: 40px 0 80px 40px;
-  background-color: rgb(235, 234, 234);
+  background-color: #f2eeec;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -261,8 +590,8 @@ footer {
 
 .classTitleProductsBasket {
   font-size: 25px;
-  padding: 10px 0 0 0;
-  margin: 15px 0 0 40px;
+  padding: 20px 0 0 0;
+  margin: 20px 0 0 40px;
 }
 
 .classPriceProductsBasket {
@@ -272,7 +601,7 @@ footer {
 
 .classDeletBasket {
   margin: 20px 0 0 40px;
-  background-color: rgb(20, 20, 20);
+  background-color: #f2a760;
   color: white;
   width: 80px;
   height: 35px;
@@ -282,11 +611,88 @@ footer {
   cursor: pointer;
 }
 
+.classDeletBasket:hover,
+.classDeletBasket:focus {
+  background-color: #f06f54;
+}
+
 .classSumPriceBasket {
   margin: 10px;
   position: absolute;
   right: 45px;
   top: 60px;
+}
+
+@media (max-width: 820px) {
+  .classBasket {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 100px 20px;
+    position: relative;
+  }
+
+  .classClearBasket {
+    background-color: #f2a760;
+    color: white;
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    width: 140px;
+    height: 35px;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  .classSumPriceBasket {
+    margin: 10px;
+    position: absolute;
+    left: 30px;
+    top: 90px;
+  }
+
+  .classProductsBasket {
+    width: 690px;
+    height: 270px;
+    margin: 100px 0 -60px 40px;
+    background-color: #f2eeec;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 390px) {
+  .classBasket {
+    min-height: calc(200vh - 100px - 105px);
+    margin: 50px 20px;
+    position: relative;
+  }
+
+  .classImgProductsBasket {
+    height: 270px;
+    width: 270px;
+    border-radius: 15px 15px 0 0;
+    transition: transform 500ms ease;
+  }
+
+  .classProductsBasket {
+    width: 270px;
+    min-height: 480px;
+    padding: 9 0 20px 0;
+    margin: 100px 0 60px 40px;
+    background-color: #f2eeec;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .classInfoProductsBasket {
+    width: 300px;
+    height: 270px;
+    position: relative;
+    left: -40px;
+    bottom: 20px;
+  }
 }
 
 /* старница ProductDetails */
@@ -298,20 +704,23 @@ footer {
 }
 
 .classContainerProductDetails {
-  padding: 20px 40px;
+  padding: 40px;
+  background-color: #f2eeec;
+  border-radius: 10px;
 }
 
 .classImgProductDetails {
   width: 500px;
   min-height: 350px;
+  border-radius: 10px;
 }
 
 .classContainerInfoProductDetails {
   position: absolute;
   width: 530px;
   height: 350px;
-  right: 5%;
-  top: 20px;
+  right: 2%;
+  top: 40px;
 }
 
 .classTitleProductDetails {
@@ -340,13 +749,18 @@ footer {
 
 .addToBasketProductDetails {
   font-size: 16px;
-  background: rgb(20, 20, 20);
+  background: #f2a760;
   color: white;
   width: 120px;
   height: 40px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
+}
+
+.addToBasketProductDetails:hover,
+.addToBasketProductDetails:focus {
+  background: #f06f54;
 }
 
 .classDivImgProductDetails2 {
@@ -357,11 +771,49 @@ footer {
   max-width: 250px;
   max-height: 300px;
   margin: 5px;
+  border-radius: 10px;
+}
+
+@media (max-width: 820px) {
+  .classProductDetails {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 100px 40px;
+    position: relative;
+  }
+
+  .classContainerProductDetails {
+    padding: 40px;
+    background-color: #f2eeec;
+    border-radius: 10px;
+    min-height: 350px;
+  }
+
+  .classImgProductDetails {
+    width: 50%;
+    min-height: 350px;
+    border-radius: 10px;
+  }
+
+  .classContainerInfoProductDetails {
+    position: absolute;
+    width: 48%;
+    height: 350px;
+    right: 2%;
+    top: 40px;
+  }
+
+  .classImgProductDetails2 {
+    max-width: 70px;
+    max-height: 350px;
+    margin: 5px;
+    border-radius: 10px;
+  }
 }
 
 /* старница Login */
 
 .classLogin {
+  min-height: calc(100vh - 100px - 105px);
   margin: 100px 150px;
 }
 
@@ -380,7 +832,8 @@ footer {
   margin: 10px 0 0 40px;
   padding: 30px;
   border-radius: 10px;
-  background-color: rgb(215, 255, 213);
+  /* background-color: rgb(248, 238, 225); */
+  background-color: #f2eeec;
   letter-spacing: 1px;
 }
 
@@ -421,8 +874,8 @@ footer {
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
-  color: rgb(20, 20, 20);
-  background-color: white;
+  color: white;
+  background-color: #f2a760;
   outline: none;
   cursor: pointer;
   transition: 0.3s;
@@ -430,7 +883,7 @@ footer {
 
 .classFormButton:focus,
 .classFormButton:hover {
-  background-color: rgb(156, 156, 156);
+  background-color: #f06f54;
 }
 
 .classFormInput:focus,
@@ -438,23 +891,47 @@ footer {
   padding: 15px 0 10px 0;
 }
 
+@media (max-width: 820px) {
+  .classLogin {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 100px 40px;
+  }
+}
+
+@media (max-width: 390px) {
+  .classLogin {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 50px 0;
+  }
+
+  .form {
+    width: 280px;
+    height: 240px;
+    margin: 10px 0 0 20px;
+    padding: 30px;
+    border-radius: 10px;
+    /* background-color: rgb(248, 238, 225); */
+    background-color: #f2eeec;
+    letter-spacing: 1px;
+  }
+}
+
 /* старница Profile */
 
 .classProfile {
+  min-height: calc(100vh - 100px - 105px);
   margin: 100px 150px;
-  width: 800px;
   border-radius: 15px;
-  background-color: rgb(215, 255, 213);
 }
 
-.classTitleProfile {
-  font-size: 35px;
-  margin: 0 0 0 40px;
-  padding: 20px 0 0 0;
+.classContainerProfile {
+  background-color: #f2eeec;
+  border-radius: 10px;
+  padding: 40px 0 40px 0;
 }
 
 .classAvatarProfile {
-  margin: 20px 0 40px 40px;
+  margin: 40px;
   width: 200px;
   border-radius: 50%;
   background-color: white;
@@ -462,10 +939,8 @@ footer {
 
 .classContainerInfoProfile {
   position: absolute;
-  width: 530px;
-  height: 350px;
-  left: 450px;
-  top: 60px;
+  left: 32%;
+  top: 31%;
   margin: 20px 0 20px 0;
 }
 
@@ -474,24 +949,74 @@ footer {
   font-size: 18px;
 }
 
+@media (max-width: 820px) {
+  .classProfile {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 100px 40px;
+    border-radius: 15px;
+  }
+
+  .classContainerProfile {
+    background-color: #f2eeec;
+    border-radius: 10px;
+    padding: 40px 0 40px 0;
+  }
+
+  .classContainerInfoProfile {
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    margin: 20px 0 20px 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .classProfile {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 50px 40px;
+    border-radius: 15px;
+  }
+
+  .classAvatarProfile {
+    margin: 20px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  .classContainerProfile {
+    background-color: #f2eeec;
+    height: 400px;
+    border-radius: 10px;
+    padding: 40px 0 40px 0;
+    text-align: center;
+  }
+
+  .classContainerInfoProfile {
+    position: absolute;
+    left: 25%;
+    top: 45%;
+    margin: 20px 0 20px 0;
+    text-align: center;
+  }
+}
+
 /* страница Post */
 
-.classDivNewPosts {
+.classPost {
   min-height: calc(100vh - 100px - 105px);
   margin: 100px 150px;
-  background-color: rgb(215, 255, 213);
-  border-radius: 15px;
+}
+
+.classContainerNewPosts {
+  padding: 40px;
+  background-color: #f2eeec;
+  border-radius: 10px;
 }
 
 .classTitleNewPosts {
   font-size: 35px;
-  margin: 0 0 0 40px;
-  padding: 40px 0 0 0;
-}
-
-.classContainerNewPosts {
-  margin: 40px;
-  /* background-color: aqua; */
+  margin: 0 0 20px 0;
 }
 
 .classNewPostsTitle {
@@ -515,10 +1040,10 @@ footer {
   font-size: 18px;
 }
 
-.classBattonPostst {
-  margin: 10px 0 50px 0;
+.classBattonPosts {
+  margin: 10px 0 20px 0;
   font-size: 16px;
-  background: rgb(20, 20, 20);
+  background: #f2a760;
   color: white;
   width: 120px;
   height: 40px;
@@ -527,52 +1052,311 @@ footer {
   cursor: pointer;
 }
 
-.classPosts {
+.classBattonPosts:hover,
+.classBattonPosts:focus {
+  background: #f06f54;
+}
+
+@media (max-width: 820px) {
+  .classPost {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 100px 40px;
+  }
+}
+
+@media (max-width: 390px) {
+  .classPost {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 50px 20px;
+  }
+
+  .classContainerNewPosts {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2eeec;
+    border-radius: 10px;
+  }
+
+  .classNewPostsTitle {
+    margin: 0 0 10px 0;
+    width: 280px;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid rgb(20, 20, 20);
+    background-color: white;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .classNewPostsInfo {
+    margin: 10px 0;
+    padding: 5px;
+    width: 290px;
+    height: 200px;
+    padding: 0 0 5px 0;
+    font-size: 18px;
+  }
+}
+
+/* страница Users */
+
+.classUsers {
   min-height: calc(100vh - 100px - 105px);
   margin: 100px 150px;
-  position: relative;
-  background-color: rgb(215, 255, 213);
-  border-radius: 15px;
 }
 
-.classContainerPost {
-  position: relative;
-  left: 150px;
-  bottom: 120px;
-  margin: 10px 0 0 0;
+.classConteinerUsers {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.classTitlePosts {
+.classConteinerInfoUsers {
+  width: 25%;
+  margin: 40px;
+  background: #f2eeec;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.classUsersImg {
+  margin: 30px 0 15px 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 500ms ease;
+}
+
+.classUsersImg:hover,
+.classUsersImg:focus {
+  transform: scale(1.05);
+}
+
+.classNameUsers {
+  margin: 0 0 5px 0;
+  font-size: 24px;
+  color: rgb(20, 20, 20);
+  text-decoration: none;
+}
+
+.classDivInfoUsers {
+  margin: 5px 0 30px 0;
+}
+
+.classInfoUsers {
+  padding: 5px 0 30px 0;
+  font-size: 18px;
+  color: rgb(20, 20, 20);
+  text-decoration: none;
+}
+
+@media (max-width: 820px) {
+  .classUsers {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 100px 40px;
+  }
+
+  .classConteinerInfoUsers {
+    width: 38%;
+    background: #f2eeec;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .classUsers {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 50px 10px;
+  }
+
+  .classConteinerInfoUsers {
+    width: 100%;
+    background: #f2eeec;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+  }
+}
+
+/* страница UserProfile */
+
+.classUserProfile {
+  min-height: calc(100vh - 100px - 105px);
+  margin: 100px 150px;
+}
+
+.classContainerUserProfile {
+  margin: 60px 0;
+  background-color: #f2eeec;
+  border-radius: 10px;
+  height: 380px;
+}
+
+.classUserProfileImg {
+  margin: 40px;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.classUserProfileInfo {
+  position: relative;
+  left: 40%;
+  bottom: 300px;
+}
+
+.classNameUserProfile {
   font-size: 35px;
-  margin: 0 0 40px 40px;
-  padding: 40px 0;
+  margin: 0 0 15px 0;
 }
 
-.classMassagePosts {
-  margin: 0 0 0 40px;
-  padding: 10px 0 20px 0;
+.classInfoUserProfile {
+  font-size: 20px;
+  margin: 0 0 5px 0;
 }
 
-.classAvatarPost {
-  margin: 20px 0 0 40px;
+.classContainerPostUserProfile {
+  margin: 60px 0 20px 0;
+  padding: 40px;
+  background-color: #f2eeec;
+  border-radius: 10px;
+}
+
+.classPostTitleUserProfile {
+  font-size: 28px;
+  margin: 0 0 15px 0;
+}
+
+.classPostUserProfile {
+  font-size: 20px;
+}
+
+.classContainerCommentUserProfile {
+  max-height: 100px;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f2eeec;
+  border-radius: 10px;
+}
+
+.classContainerImgCommentUserProfile {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   background-color: white;
 }
 
-.classTitlePost {
-  font-size: 28px;
-  margin: 10px 0 0 40px;
+.classContainerInfoCommentUserProfile {
+  position: relative;
+  left: 12%;
+  bottom: 100px;
 }
 
-.classInfoPost {
+.classContainerNameInfoCommentUserProfile {
   font-size: 20px;
-  width: 78%;
-  margin: 10px 0 0 40px;
 }
 
-.classAuthorPost {
+.classContainerCommentInfoCommentUserProfile {
   font-size: 18px;
-  margin: 10px 0 0 40px;
+  margin: 10px 0 0 0;
+}
+
+@media (max-width: 820px) {
+  .classUserProfile {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 100px 40px;
+  }
+
+  .classContainerUserProfile {
+    margin: 60px 0;
+    background-color: #f2eeec;
+    border-radius: 10px;
+    height: 280px;
+  }
+
+  .classUserProfileImg {
+    margin: 40px;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  .classUserProfileInfo {
+    position: relative;
+    left: 40%;
+    bottom: 230px;
+  }
+
+  .classContainerInfoCommentUserProfile {
+    position: relative;
+    left: 18%;
+    bottom: 100px;
+  }
+}
+
+@media (max-width: 390px) {
+  .classUserProfile {
+    min-height: calc(100vh - 100px - 105px);
+    margin: 50px 40px;
+  }
+
+  .classContainerUserProfile {
+    margin: 60px 0;
+    background-color: #f2eeec;
+    border-radius: 10px;
+    height: 480px;
+  }
+
+  .classUserProfileImg {
+    margin: 55px;
+    position: relative;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  .classUserProfileInfo {
+    text-align: center;
+    position: relative;
+    left: 1%;
+    bottom: 20px;
+  }
+
+  .classContainerImgCommentUserProfile {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  .classContainerInfoCommentUserProfile {
+    position: relative;
+    left: 30%;
+    bottom: 65px;
+    margin: 0 80px 0 0;
+  }
+
+  .classContainerCommentUserProfile {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f2eeec;
+    border-radius: 10px;
+  }
+
+  .classContainerCommentInfoCommentUserProfile {
+    font-size: 18px;
+    margin: 10px 10px 0 0;
+  }
 }

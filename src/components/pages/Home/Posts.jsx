@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addPost } from "../../store/postsSlice";
+import { addPostAsync } from "../../store/postsSlice";
 import { Navigate } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
 import { logout } from "../../store/authSlice";
@@ -12,15 +12,16 @@ function Posts() {
   const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
   const user = useSelector((state) => state.auth.user);
   const username = useSelector((state) => state.auth.user?.username);
-  const posts = useSelector((state) => state.posts);
+  const userId = useSelector((state) => state.auth.user?.id);
 
   const handleAddPost = () => {
     const post = {
       title,
       content,
       username,
+      userId,
     };
-    dispatch(addPost(post));
+    dispatch(addPostAsync(post));
     setTitle("");
     setContent("");
   };
@@ -46,8 +47,11 @@ function Posts() {
           <Link to="/State" className="linkState">
             State
           </Link>
+          <NavLink to="/Users" className="linkUsers">
+            Users
+          </NavLink>
           <NavLink to="/Posts" className="linkInPosts">
-            Posts
+            Add posts
           </NavLink>
           <NavLink to="/Basket" className="linkBasket">
             Basket
@@ -61,53 +65,28 @@ function Posts() {
         </nav>
       </header>
 
-      <div className="classDivNewPosts">
-        <h2 className="classTitleNewPosts">Добавить пост</h2>
+      <div className="classPost">
         <div className="classContainerNewPosts">
+          <h2 className="classTitleNewPosts">Add post</h2>
           <input
             type="text"
-            placeholder="Заголовок"
+            placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="classNewPostsTitle"
           />
           <p></p>
           <textarea
-            placeholder="Содержание"
+            placeholder="Content"
             value={content}
             onChange={(e) => setContent(e.target.value)}
             className="classNewPostsInfo"
           ></textarea>
           <p></p>
-          <button onClick={handleAddPost} className="classBattonPostst">
+          <button onClick={handleAddPost} className="classBattonPosts">
             Добавить
           </button>
         </div>
-      </div>
-
-      <div className="classPosts">
-        <h2 className="classTitlePosts">Список постов</h2>
-        {posts.length > 0 ? (
-          <div>
-            {posts.map((post) => (
-              <div key={post.id}>
-                <img
-                  src={user.image}
-                  alt="Аватар"
-                  className="classAvatarPost"
-                />
-                <div className="classContainerPost">
-                  <h3 className="classTitlePost">{post.title}</h3>
-                  <p className="classInfoPost">{post.content}</p>
-                  <p className="classAuthorPost">Автор: {post.username}</p>
-                  <p></p>
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="classMassagePosts">Посты отсутствуют.</p>
-        )}
       </div>
 
       <footer>

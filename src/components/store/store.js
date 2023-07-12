@@ -4,6 +4,7 @@ import basketReducer from "./basketSlice";
 import productDetailsReducer from "./productDetailsSlice";
 import authReducer from "./authSlice";
 import postsReducer from "./postsSlice";
+import usersReducer from "./usersSlice";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     productDetails: productDetailsReducer,
     auth: authReducer,
     posts: postsReducer,
+    users: usersReducer,
   },
 });
 

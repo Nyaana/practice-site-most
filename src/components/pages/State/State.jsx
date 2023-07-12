@@ -1,7 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 function State() {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
+
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />;
+  }
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   const [count, setCount] = useState(1);
 
   const plusCount = () => {
@@ -22,12 +35,24 @@ function State() {
           <Link to="/" className="linkHome">
             Home
           </Link>
-          <Link to="/State" className="linkInState">
+          <NavLink to="/State" className="linkInState">
             State
-          </Link>
-          <Link to="/Basket" className="linkBasket">
+          </NavLink>
+          <NavLink to="/Users" className="linkUsers">
+            Users
+          </NavLink>
+          <NavLink to="/Posts" className="linkPosts">
+            Add posts
+          </NavLink>
+          <NavLink to="/Basket" className="linkBasket">
             Basket
-          </Link>
+          </NavLink>
+          <NavLink onClick={handleLogout} className="linkLogout">
+            Logout
+          </NavLink>
+          <NavLink to="/Profile">
+            <button className="buttonProfile">Profile</button>
+          </NavLink>
         </nav>
       </header>
 

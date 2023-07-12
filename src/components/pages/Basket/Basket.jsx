@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromBasket, clearBasket } from "../../store/basketSlice";
 
@@ -23,6 +24,15 @@ export default function Basket() {
     return total;
   };
 
+  const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />;
+  }
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <body>
       <header>
@@ -36,20 +46,32 @@ export default function Basket() {
           <Link to="/State" className="linkState">
             State
           </Link>
-          <Link to="/Basket" className="linkInBasket">
+          <NavLink to="/Users" className="linkUsers">
+            Users
+          </NavLink>
+          <NavLink to="/Posts" className="linkPosts">
+            Add posts
+          </NavLink>
+          <NavLink to="/Basket" className="linkBasket">
             Basket
-          </Link>
+          </NavLink>
+          <NavLink onClick={handleLogout} className="linkLogout">
+            Logout
+          </NavLink>
+          <NavLink to="/Profile">
+            <button className="buttonProfile">Profile</button>
+          </NavLink>
         </nav>
       </header>
 
       <div className="classBasket">
-        <p className="TitleBasket">Ваша корзина</p>
+        <p className="TitleBasket">Your basket</p>
         {basketItems.length === 0 ? (
-          <p className="clearBasket">Ваша корзина пуста.</p>
+          <p className="clearBasket">Your basket is empty.</p>
         ) : (
           <div className="classContainerBasket">
             <button className="classClearBasket" onClick={handleClearBasket}>
-              Очистить корзину
+              Clear basket
             </button>
             <div>
               {basketItems.map((item) => (
@@ -61,14 +83,12 @@ export default function Basket() {
                   />
                   <div className="classInfoProductsBasket">
                     <p className="classTitleProductsBasket">{item.title}</p>
-                    <p className="classPriceProductsBasket">
-                      {item.price} руб.
-                    </p>
+                    <p className="classPriceProductsBasket">{item.price} $</p>
                     <button
                       className="classDeletBasket"
                       onClick={() => handleRemoveFromBasket(item.id)}
                     >
-                      Удалить
+                      Delete
                     </button>
                   </div>
                 </div>
@@ -76,7 +96,7 @@ export default function Basket() {
             </div>
 
             <p className="classSumPriceBasket">
-              Общая сумма: {calculateTotal()}$
+              Total sum: {calculateTotal()}$
             </p>
           </div>
         )}

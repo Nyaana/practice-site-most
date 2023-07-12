@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/authSlice";
 import { useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Login() {
   const dispatch = useDispatch();
@@ -30,7 +31,6 @@ function Login() {
     setIsLoading(true);
 
     const credentials = { username, password };
-    console.log("Отправляем запрос на сервер:", credentials);
 
     try {
       await dispatch(login(credentials));
@@ -38,14 +38,14 @@ function Login() {
         setIsLoading(false);
       }, 2000);
     } catch (error) {
-      console.log("Ошибка:", error);
+      console.log("Error:", error);
       setIsLoading(false);
     }
   };
 
   const getErrorMessage = () => {
     if (error === "Invalid credentials") {
-      return "Неправильно введен логин или пароль";
+      return "Login or password entered incorrectly";
     }
     return error;
   };
@@ -55,10 +55,7 @@ function Login() {
       const { firstName, lastName } = user;
       return (
         <p>
-          Добро пожаловать,
-          <span>
-            {} {firstName} {lastName}!
-          </span>
+          Welcome, {firstName} {lastName}!
         </p>
       );
     }
@@ -66,46 +63,68 @@ function Login() {
   };
 
   return (
-    <div className="classLogin">
-      <div className="classContainerAuth">
-        <h1 className="classTitleSignIn">Вход</h1>
-        {error && <div className="classMessage">{getErrorMessage()}</div>}
-        {isLoggedIn && user && (
-          <div className="classMessage">{getWelcomeMessage()}</div>
-        )}
-        <form onSubmit={handleLogin} className="form">
-          <div className="classFormGroup">
-            <label htmlFor="username" className="classFormLabel">
-              Имя пользователя
-            </label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="classFormInput"
-              placeholder=" "
-            />
-          </div>
-          <div className="classFormGroup">
-            <label htmlFor="password" className="classFormLabel">
-              Пароль
-            </label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="classFormInput"
-              placeholder=" "
-            />
-          </div>
-          <button type="submit" className="classFormButton">
-            Войти
-          </button>
-        </form>
+    <body>
+      <header>
+        <div>
+          <span className="logo">Nyaana</span>
+        </div>
+        <nav className="navigacion">
+          <Link to="/" className="linkHome">
+            Home
+          </Link>
+          <NavLink to="/Login" className="linkInSignIn">
+            Sign In
+          </NavLink>
+        </nav>
+      </header>
+
+      <div className="classLogin">
+        <div className="classContainerAuth">
+          <h1 className="classTitleSignIn">Login</h1>
+          {error && <div className="classMessage">{getErrorMessage()}</div>}
+          {isLoggedIn && user && (
+            <div className="classMessage">{getWelcomeMessage()}</div>
+          )}
+          <form onSubmit={handleLogin} className="form">
+            <div className="classFormGroup">
+              <label htmlFor="username" className="classFormLabel">
+                User name
+              </label>
+              <input
+                type="text"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="classFormInput"
+                placeholder=" "
+              />
+            </div>
+            <div className="classFormGroup">
+              <label htmlFor="password" className="classFormLabel">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="classFormInput"
+                placeholder=" "
+              />
+            </div>
+            <button type="submit" className="classFormButton">
+              Sign in
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+
+      <footer>
+        <div className="footer-container">
+          <p>Copyriting</p>
+        </div>
+      </footer>
+    </body>
   );
 }
 
